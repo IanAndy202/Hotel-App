@@ -1,4 +1,4 @@
-<h2>Check-In Guests</h2>
+<h2>Check In and Out Guests</h2>
 <form action="/checkin" method="POST">
   <label for="guestName">Guest Name:</label>
   <input type="text" id="guestName" name="guestName" required>
@@ -15,3 +15,30 @@
   <br>
   <button type="submit">Check In</button>
 </form>
+
+<!-- NEW SECTION: CHECK-OUT GUESTS -->
+<h2>Check-Out Guests</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Guest Name</th>
+      <th>Room Number</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each occupiedRooms}}
+    <tr>
+      <td>{{this.assignedGuest.name}}</td>
+      <td>{{this.number}}</td>
+      <td>
+        <form action="/checkout" method="POST">
+          <!-- We send the roomId so the server knows which room to free up -->
+          <input type="hidden" name="roomId" value="{{this.roomId}}" />
+          <button type="submit">Check Out</button>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

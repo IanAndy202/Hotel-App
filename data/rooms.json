@@ -3,10 +3,7 @@
     {
       "roomId": "101",
       "number": 101,
-      "status": "occupied",
-      "assignedGuest": {
-        "name": "Ian Njagi"
-      },
+      "status": "vacant",
       "cleaningRequest": false
     },
     {
@@ -67,7 +64,7 @@
     },
     {
       "roomId": "110",
-      "number": 104,
+      "number": 110,
       "status": "vacant",
       "assignedGuest": null,
       "cleaningRequest": false

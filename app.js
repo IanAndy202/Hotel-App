@@ -133,8 +133,11 @@ app.get('/checkin', isAuthenticated, async (req, res) => {
   try {
     const rooms = await db.getRooms();
     const availableRooms = rooms.filter(r => r.status === 'vacant' || r.status === 'ready');
+    // Rooms that are occupied (for check-out)
+    const occupiedRooms = rooms.filter(r => r.status === 'occupied');
     // Render check-in.hbs within layout.hbs
-    renderWithLayout(res, 'layout.hbs', 'check-in.hbs', { title: 'Check-In Guests', availableRooms });
+    renderWithLayout(res, 'layout.hbs', 'check-in.hbs', { title: 'Check-In Guests', availableRooms, occupiedRooms });
+
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');
@@ -155,6 +158,33 @@ app.post('/checkin', isAuthenticated, async (req, res) => {
     res.status(500).send('Check-In failed');
   }
 });
+app.post('/checkout', isAuthenticated, async (req, res) => {
+  if (req.session.role !== 'Receptionist') {
+    return res.redirect('/login');
+  }
+
+  const { roomId } = req.body;
+  try {
+    
+    const rooms = await db.getRooms();
+    // Find the room with the matching roomId
+    const room = rooms.find(r => r.roomId === roomId);
+    if (room) {
+      // Set status to "vacant"
+      room.status = 'vacant';
+      // Clear the assignedGuest
+      delete room.assignedGuest;
+    }
+
+    // Save updated rooms
+    await db.saveRooms(rooms);
+    res.redirect('/checkin');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error checking out guest');
+  }
+});
+
 
 // =========================
 // CLEANING REQUESTS (GET, POST, and complete)
