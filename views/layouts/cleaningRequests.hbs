@@ -1,0 +1,32 @@
+{{!-- views/cleaning.hbs --}}
+<h2>Cleaning Requests</h2>
+<form action="/cleaning-requests" method="POST">
+  <label for="room">Select Room for Cleaning Request:</label>
+  <select id="room" name="room">
+    {{#each roomsForCleaning}}
+      <option value="{{this.roomId}}">{{this.number}}</option>
+    {{/each}}
+  </select>
+  <br>
+  <button type="submit">Create Cleaning Request</button>
+</form>
+
+<h3>Current Cleaning Requests</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Room ID</th>
+    <th style="width: 150px;">Status</th>
+    <th style="width: 200px;">Requested At</th>
+  </tr>
+</thead>
+<tbody>
+  {{#each cleaningTasks}}
+  <tr>
+    <td style="width: 150px;">{{this.roomId}}</td>
+    <td style="width: 150px;">{{this.status}}</td>
+    <td style="width: 200px;">{{this.requestedAt}}</td>
+  </tr>
+  {{/each}}
+</tbody>
+</table>

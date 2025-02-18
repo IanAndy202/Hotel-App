@@ -1,0 +1,17 @@
+{
+    "users": [
+      {
+        "userId": 1,
+        "username": "janelung@example.com",
+        "role": "Receptionist",
+        "password": "123"
+      },
+      {
+        "userId": 2,
+        "username": "mike401@example.com",
+        "role": "Housekeeping",
+        "password": "321"
+      }
+    ]
+  }
+  

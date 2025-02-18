@@ -1,0 +1,25 @@
+<h2>Room Status Overview</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Room Number</th>
+      <th>Status</th>
+      <th>Guest Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rooms}}
+    <tr>
+      <td>{{this.number}}</td>
+      <td>{{this.status}}</td>
+      <td>
+        {{#if this.assignedGuest}}
+          {{this.assignedGuest.name}}
+        {{else}}
+          -
+        {{/if}}
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

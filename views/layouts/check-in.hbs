@@ -1,0 +1,17 @@
+<h2>Check-In Guests</h2>
+<form action="/checkin" method="POST">
+  <label for="guestName">Guest Name:</label>
+  <input type="text" id="guestName" name="guestName" required>
+  <br>
+  <label for="contact">Contact:</label>
+  <input type="text" id="contact" name="contact" required>
+  <br>
+  <label for="room">Select Room:</label>
+  <select id="room" name="room">
+    {{#each availableRooms}}
+      <option value="{{this.roomId}}">{{this.number}}</option>
+    {{/each}}
+  </select>
+  <br>
+  <button type="submit">Check In</button>
+</form>

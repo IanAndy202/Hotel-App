@@ -1,0 +1,76 @@
+{
+  "rooms": [
+    {
+      "roomId": "101",
+      "number": 101,
+      "status": "occupied",
+      "assignedGuest": {
+        "name": "Ian Njagi"
+      },
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "102",
+      "number": 102,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "103",
+      "number": 103,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "104",
+      "number": 104,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "105",
+      "number": 105,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "106",
+      "number": 106,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "107",
+      "number": 107,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "108",
+      "number": 108,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "109",
+      "number": 109,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    },
+    {
+      "roomId": "110",
+      "number": 104,
+      "status": "vacant",
+      "assignedGuest": null,
+      "cleaningRequest": false
+    }
+  ]
+}

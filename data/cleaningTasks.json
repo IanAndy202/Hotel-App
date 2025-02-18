@@ -1,0 +1,16 @@
+{
+  "cleaningTasks": [
+    {
+      "taskId": "1739869101843",
+      "roomId": "101",
+      "requestedAt": "2025-02-18T08:58:21.841Z",
+      "status": "pending"
+    },
+    {
+      "taskId": "1739869696113",
+      "roomId": "104",
+      "requestedAt": "2025-02-18T09:08:16.112Z",
+      "status": "pending"
+    }
+  ]
+}
